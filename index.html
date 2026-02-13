@@ -554,79 +554,6 @@
         }
 
 
-     /* --- Photography (Grid Gallery) --- */
-
-        .photography-grid {
-
-            display: grid;
-
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-
-            gap: 3rem;
-
-            padding: 3rem;
-
-            background: var(--white);
-
-        }
-
-
-        .photography-item {
-
-            display: flex;
-
-            flex-direction: column;
-
-            gap: 12px;
-
-        }
-
-
-        .photography-item img {
-
-            width: 100%;
-
-            height: auto;
-
-            display: block;
-
-            border: 4px solid var(--black);
-
-            box-shadow: 8px 8px 0px var(--black);
-
-            transition: all 0.2s ease;
-
-        }
-
-
-        .photography-item img:hover {
-
-            transform: translate(-4px, -4px);
-
-            box-shadow: 12px 12px 0px var(--yellow);
-
-        }
-
-
-        .photo-location {
-
-            font-weight: 900;
-
-            font-size: 0.8rem;
-
-            text-transform: uppercase;
-
-            letter-spacing: 1px;
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 5px;
-
-        }
-
-
         /* --- Contact Page (Bold/Minimal) --- */
 
         .contact-pane {
@@ -742,8 +669,6 @@
                         <li><a onclick="showPage('events')" id="nav-events">EVENTS</a></li>
 
                         <li><a onclick="showPage('covers')" id="nav-covers">COVERS</a></li>
-
-                        <li><a onclick="showPage('photography')" id="nav-photography">PHOTOGRAPHY</a></li>
 
                         <li><a onclick="showPage('contact')" id="nav-contact">CONTACT</a></li>
 
@@ -901,7 +826,13 @@
         <main id="page-covers" class="page-section">
 
             <div class="covers-grid">
+                <div class="cover-item">
 
+                    <img src="Rifaq.png" alt="Cover 1">
+
+                    <div class="cover-info">Rafiq Sabir: Selected Poems / 2029</div>
+
+                </div>
                 <div class="cover-item">
 
                     <img src="magical.png" alt="Cover 1">
@@ -948,103 +879,6 @@
                 </div>
         
             </div>
-
-        </main>
-
-
-     <main id="page-photography" class="page-section">
-
-            <div class="photography-grid">
-
-                <div class="photography-item">
-
-                    <img src="PC300602.JPG" alt="Photography">
-
-                    <span class="photo-location">ABU DHABI, UAE</span>
-
-                </div>
-
-
-                <div class="photography-item">
-
-                    <img src="PC300628.JPG" alt="Photography">
-
-                    <span class="photo-location">ABU DHABI, UAE</span>
-
-                </div>
-
-
-                <div class="photography-item">
-
-                    <img src="PC300674.JPG" alt="Photography">
-
-                    <span class="photo-location">ABU DHABI, UAE</span>
-
-                </div>
-
-
-                <div class="photography-item">
-
-                    <img src="P1030822.JPG" alt="Photography">
-
-                    <span class="photo-location">ABU DHABI, UAE</span>
-
-                </div>
-                  <div class="photography-item">
-
-                    <img src="P1050858.JPG" alt="Photography">
-
-                    <span class="photo-location">ABU DHABI, UAE</span>
-
-                </div>
-
-                <div class="photography-item">
-
-                    <img src="P1081067.JPG" alt="Photography">
-
-                    <span class="photo-location">DUBAI, UAE</span>
-
-                </div>
-
-                  <div class="photography-item">
-
-                    <img src="P1071004.JPG" alt="Photography">
-
-                    <span class="photo-location">DUBAI, UAE</span>
-
-                </div>
-
-                
-                  <div class="photography-item">
-
-                    <img src="P1071000.JPG" alt="Photography">
-
-                    <span class="photo-location">DUBAI, UAE</span>
-
-                </div>
-                 <div class="photography-item">
-
-                    <img src="P1070962.JPG" alt="Photography">
-
-                    <span class="photo-location">DUBAI, UAE</span>
-
-                </div>
-
-                 <div class="photography-item">
-
-                    <img src="P1070917.JPG" alt="Photography">
-
-                    <span class="photo-location">DUBAI, UAE</span>
-
-                </div>
-                   <div class="photography-item">
-
-                    <img src="P1020752.JPG" alt="Photography">
-
-                    <span class="photo-location">DUBAI, UAE</span>
-
-                </div>
-                </div>
 
         </main>
 
