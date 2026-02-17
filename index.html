@@ -117,6 +117,16 @@
             transition: 0.3s;
         }
 
+	.contact-email-wrap {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  display: inline-block;
+}
+
+.contact-email::before {
+  content: "GRO.SSERPRANEH@NASSAH.NAYRА";
+}
+
         /* --- Page Transitions --- */
         .page-section {
             display: none;
@@ -653,12 +663,14 @@ transition: all 0.2s ease-in-out;
 
         </main>
 
-        <main id="page-contact" class="page-section">
-            <div class="contact-pane">
-                <p style="text-transform: uppercase; font-weight: 900; margin-bottom: 2rem;">Inquiries & Collaborations</p>
-                <a class="contact-email">ARYAN.HASSAN {at} HENARPRESS {dot} ORG</a>
-            </div>
-        </main>
+ <main id="page-contact" class="page-section">
+    <div class="contact-pane">
+        <p style="text-transform: uppercase; font-weight: 900; margin-bottom: 2rem;">Inquiries & Collaborations</p>
+        <span class="contact-email-wrap">
+            <a class="contact-email" onclick="this.href='mailto:' + 'aryan.hassan' + '@' + 'henarpress.org'"></a>
+        </span>
+    </div>
+</main>
 
         <footer>
             <span>© 2026 ARYAN OMAR HASSAN</span>
