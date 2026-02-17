@@ -376,7 +376,11 @@ transition: all 0.2s ease-in-out;
                 font-size: 1.2rem;
             }
 
-            /* Hamburger Logic */
+			.covers-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 1.5rem;
+}
             .hamburger {
                 display: flex;
             }
@@ -667,7 +671,7 @@ transition: all 0.2s ease-in-out;
     <div class="contact-pane">
         <p style="text-transform: uppercase; font-weight: 900; margin-bottom: 2rem;">Inquiries & Collaborations</p>
         <span class="contact-email-wrap">
-            <a class="contact-email" onclick="this.href='mailto:' + 'aryan.hassan' + '@' + 'henarpress.org'"></a>
+            <a class="contact-email"></a>
         </span>
     </div>
 </main>
