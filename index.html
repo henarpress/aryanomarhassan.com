@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aryan Omar Hassan</title>
@@ -41,7 +42,112 @@
             overflow: hidden; 
         }
 
-        /* --- Header & Nav --- */
+/* --- Form Styling --- */
+#contact-form {
+    width: 100%;
+    max-width: 550px;
+    background: var(--white);
+    padding: 2.5rem;
+    border: 4px solid var(--black);
+    box-shadow: 8px 8px 0px var(--black);
+    text-align: left;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    font-weight: 900;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    padding: 12px;
+    border: 3px solid var(--black);
+    background: var(--white);
+    color: var(--black);
+    transition: all 0.1s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    background-color: var(--yellow);
+    transform: translate(-4px, -4px);
+    box-shadow: 4px 4px 0px var(--black);
+}
+
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* File Input Button Styling */
+.form-group input[type="file"]::file-selector-button {
+    font-family: 'Courier New', monospace;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    padding: 8px 15px;
+    margin-right: 15px;
+    background: var(--white);
+    color: var(--black);
+    border: 3px solid var(--black);
+    cursor: pointer;
+    transition: all 0.1s;
+}
+
+.form-group input[type="file"]::file-selector-button:hover {
+    background: var(--yellow);
+    transform: translate(-2px, -2px);
+    box-shadow: 3px 3px 0px var(--black);
+}
+
+.turnstile-group {
+    align-items: center;
+    margin-bottom: 0;
+}
+
+#submit-btn {
+    font-family: 'Courier New', monospace;
+    font-size: 1.1rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: var(--black);
+    color: var(--yellow);
+    padding: 15px;
+    border: 3px solid var(--black);
+    cursor: pointer;
+    width: 100%;
+    margin-top: 1rem;
+    transition: all 0.1s;
+}
+
+#submit-btn:hover {
+    background: var(--white);
+    color: var(--black);
+    transform: translate(-4px, -4px);
+    box-shadow: 4px 4px 0px var(--black);
+}
+
+/* Mobile Adjustments for the Form */
+@media (max-width: 600px) {
+    #contact-form {
+        padding: 1.5rem;
+        box-shadow: 6px 6px 0px var(--black);
+    }
+}
+
         header {
             padding: 2.5rem;
             border-bottom: 5px solid var(--black);
@@ -117,17 +223,6 @@
             transition: 0.3s;
         }
 
-	.contact-email-wrap {
-  unicode-bidi: bidi-override;
-  direction: rtl;
-  display: inline-block;
-}
-
-.contact-email::before {
-  content: "GRO.SSERPRANEH@NASSAH.NAYRА";
-}
-
-        /* --- Page Transitions --- */
         .page-section {
             display: none;
             flex: 1;
@@ -667,12 +762,37 @@ transition: all 0.2s ease-in-out;
 
         </main>
 
- <main id="page-contact" class="page-section">
+<main id="page-contact" class="page-section">
     <div class="contact-pane">
         <p style="text-transform: uppercase; font-weight: 900; margin-bottom: 2rem;">Inquiries & Collaborations</p>
-        <span class="contact-email-wrap">
-            <a class="contact-email"></a>
-        </span>
+        
+        <form id="contact-form" action="https://usebasin.com/f/817d60bd36c5" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="name" data-en="Name" data-so="ناو" data-ku="Nav">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email" data-en="Email" data-so="ئیمەیڵ" data-ku="Email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="message" data-en="Message" data-so="پەیام" data-ku="Peyam">Message</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+                        
+            <div class="form-group turnstile-group">
+                <div class="cf-turnstile" 
+                     data-sitekey="0x4AAAAAABnQk_4bp6OBRVKL"
+                     data-callback="onTurnstileSuccess">
+                </div>
+                <button type="submit" id="submit-btn" style="display: none;" 
+                        data-en="Send Message" data-so="نامە بنێرە" data-ku="Peyam bişîne">
+                    Send Message
+                </button>
+            </div>
+        </form>
     </div>
 </main>
 
@@ -683,6 +803,9 @@ transition: all 0.2s ease-in-out;
     </div>
 
     <script>
+function onTurnstileSuccess() {
+    document.getElementById('submit-btn').style.display = 'block';
+}
         const navMenu = document.getElementById('nav-menu');
         
         function toggleMenu() {
