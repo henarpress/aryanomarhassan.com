@@ -140,7 +140,7 @@
     box-shadow: 4px 4px 0px var(--black);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 900px) {
     #contact-form {
         padding: 1.5rem;
         box-shadow: 6px 6px 0px var(--black);
@@ -242,7 +242,7 @@
         .main-grid {
             display: grid;
             grid-template-columns: 1fr 1.2fr;
-            height: auto;
+            height: 100%;
             flex: 1;
         }
 
@@ -439,7 +439,6 @@ transition: all 0.2s ease-in-out;
 	transition: all 0.2s ease-in-out;
 }
 
-        /* --- Footer --- */
         footer {
             padding: 1.2rem 2.5rem;
             border-top: 5px solid var(--black);
@@ -452,15 +451,14 @@ transition: all 0.2s ease-in-out;
             text-transform: uppercase;
         }
 
-        /* --- MOBILE STYLES --- */
-        @media (max-width: 600px) {
+        @media (max-width: 900px) {
             body {
-                padding: 0; /* Remove outer gray padding */
+                padding: 0;
                 background-color: var(--white);
             }
 
             .site-canvas {
-                border: none; /* Remove outer box border */
+                border: none;
                 max-width: 100%;
                 min-height: 100vh;
             }
@@ -531,11 +529,11 @@ transition: all 0.2s ease-in-out;
             }
         }
 
-        @media (max-width: 950px) and (min-width: 601px) {
+        @media (max-width: 950px) and (min-width: 901px) {
             .events-grid { grid-template-columns: 1fr; }
             .writing-item { grid-template-columns: 1fr; }
         }
-		@media (max-width: 900px) and (min-width: 601px) {
+		@media (max-width: 900px) and (min-width: 901px) {
     .photo-pane {
         padding: 1.5rem;
     }
